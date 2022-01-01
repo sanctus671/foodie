@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="1" id="com.foodienz.app" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="1" id="com.foodieappnz.app" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Foodie</name>
     <description>Find your favourite locations in New Zealand.</description>
     <author email="taylor@taylorhamling.com" href="https://www.taylorhamling.com/">Taylor Hamling</author>
@@ -73,10 +73,10 @@
         <allow-intent href="itms-apps:*" />
         <preference name="ios-statusbarstyle" value="black-opaque" />
         <edit-config file="*-Info.plist" mode="merge" target="NSLocationAlwaysUsageDescription">
-            <string>Send Geolocated notifications</string>
+            <string>We use your location for full functionality of certain app features and send geolocated notifications</string>
         </edit-config>
         <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
-            <string>Send Geolocated notifications</string>
+            <string>We use your location for full functionality of certain app features and send geolocated notifications</string>
         </edit-config>
         <edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryUsageDescription">
             <string>Select images for your profile and location</string>
@@ -84,26 +84,25 @@
         <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
             <string>Take pictures for your profile and location</string>
         </edit-config>
-        <icon height="1024" src="resources/ios/icon/icon-1024.png" width="1024" />
-        <icon height="29" src="resources/ios/icon/icon-small.png" width="29" />
-        <icon height="58" src="resources/ios/icon/icon-small@2x.png" width="58" />
-        <icon height="87" src="resources/ios/icon/icon-small@3x.png" width="87" />
-        <icon height="40" src="resources/ios/icon/icon-small-40.png" width="40" />
-        <icon height="80" src="resources/ios/icon/icon-small-40@2x.png" width="80" />
-        <icon height="120" src="resources/ios/icon/icon-small-40@3x.png" width="120" />
-        <icon height="50" src="resources/ios/icon/icon-small-50.png" width="50" />
-        <icon height="100" src="resources/ios/icon/icon-small-50@2x.png" width="100" />
-        <icon height="57" src="resources/ios/icon/icon.png" width="57" />
-        <icon height="114" src="resources/ios/icon/icon@2x.png" width="114" />
-        <icon height="60" src="resources/ios/icon/icon-60.png" width="60" />
-        <icon height="120" src="resources/ios/icon/icon-60@2x.png" width="120" />
-        <icon height="180" src="resources/ios/icon/icon-60@3x.png" width="180" />
-        <icon height="72" src="resources/ios/icon/icon-72.png" width="72" />
-        <icon height="144" src="resources/ios/icon/icon-72@2x.png" width="144" />
-        <icon height="76" src="resources/ios/icon/icon-76.png" width="76" />
-        <icon height="152" src="resources/ios/icon/icon-76@2x.png" width="152" />
-        <icon height="167" src="resources/ios/icon/icon-167.png" width="167" />
-        <icon height="167" src="resources/ios/icon/icon-83.5@2x.png" width="167" />
+        <icon height="1024" src="res/icon/ios/icon-1024.png" width="1024" />
+        <icon height="29" src="res/icon/ios/icon-small.png" width="29" />
+        <icon height="58" src="res/icon/ios/icon-small@2x.png" width="58" />
+        <icon height="87" src="res/icon/ios/icon-small@3x.png" width="87" />
+        <icon height="40" src="res/icon/ios/icon-40.png" width="40" />
+        <icon height="80" src="res/icon/ios/icon-40@2x.png" width="80" />
+        <icon height="50" src="res/icon/ios/icon-50.png" width="50" />
+        <icon height="100" src="res/icon/ios/icon-50@2x.png" width="100" />
+        <icon height="57" src="res/icon/ios/icon.png" width="57" />
+        <icon height="114" src="res/icon/ios/icon@2x.png" width="114" />
+        <icon height="60" src="res/icon/ios/icon-60.png" width="60" />
+        <icon height="120" src="res/icon/ios/icon-60@2x.png" width="120" />
+        <icon height="180" src="res/icon/ios/icon-60@3x.png" width="180" />
+        <icon height="72" src="res/icon/ios/icon-72.png" width="72" />
+        <icon height="144" src="res/icon/ios/icon-72@2x.png" width="144" />
+        <icon height="76" src="res/icon/ios/icon-76.png" width="76" />
+        <icon height="152" src="res/icon/ios/icon-76@2x.png" width="152" />
+        <icon height="167" src="res/icon/ios/icon-167.png" width="167" />
+        <icon height="167" src="res/icon/ios/icon-83.5@2x.png" width="167" />
     </platform>
     <splash height="480" platform="ios" src="resources/ios/splash/Default~iphone.png" width="320" />
     <splash height="960" platform="ios" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
@@ -136,5 +135,9 @@
     <plugin name="cordova-plugin-ionic-webview" spec="^2.4.1" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="onesignal-cordova-plugin" spec="^2.7.0" />
-    <engine name="android" spec="6.3.0" />
+    <plugin name="cordova-plugin-geolocation" spec="^4.1.0">
+        <variable name="GPS_REQUIRED" value="true" />
+    </plugin>
+    <plugin name="cordova-plugin-nativegeocoder" spec="^3.2.2" />
+    <engine name="android" spec="^6.3.0" />
 </widget>
